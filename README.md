@@ -1,6 +1,8 @@
 # elm-docker
  饿了么工具docker
  
+ [![Docker Image Publish](https://github.com/zelang/elm-docker/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/zelang/elm-docker/actions/workflows/docker-publish.yml)
+ 
  工具使用说明：[elm-release](https://github.com/zelang/elm-release)
  
 一键安装：
