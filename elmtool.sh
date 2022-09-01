@@ -41,9 +41,9 @@ DOCKER_UP() {
     fi
     
     if [[ $1 == "" ]]; then
-        wget https://raw.githubusercontent.com/zelang/elm-docker/main/config.yaml -O /etc/elmtool/config.yaml
+        wget https://raw.githubusercontent.com/zelang/elm-docker/main/config.ini -O /etc/elmtool/config.ini
     else
-        wget $1 -O /etc/elmtool/config.yaml
+        wget $1 -O /etc/elmtool/config.ini
     fi
 
     docker-compose pull
