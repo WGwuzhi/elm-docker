@@ -18,7 +18,7 @@ DOCKER_INSTALL() {
     if [[ ${docker_compose_exists} == "" ]]; then
         OUT_ALERT "[✓] 正在安装docker-compose"
 
-        curl -L --fail https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+        curl -L --fail https://ghproxy.com/https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
         chmod +x /usr/local/bin/docker-compose && \
 	    ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
     fi
@@ -37,11 +37,11 @@ DOCKER_UP() {
     cd /etc/elmtool
 
     if [ ! -f "/etc/elmtool/docker-compose.yml" ]; then
-        wget https://raw.githubusercontent.com/zelang/elm-docker/main/docker-compose.yml -O /etc/elmtool/docker-compose.yml
+        wget https://ghproxy.com/https://raw.githubusercontent.com/zelang/elm-docker/main/docker-compose.yml -O /etc/elmtool/docker-compose.yml
     fi
     
     if [[ $1 == "" ]]; then
-        wget https://raw.githubusercontent.com/zelang/elm-docker/main/config.ini -O /etc/elmtool/config.ini
+        wget https://ghproxy.com/https://raw.githubusercontent.com/zelang/elm-docker/main/config.ini -O /etc/elmtool/config.ini
     else
         wget $1 -O /etc/elmtool/config.ini
     fi
