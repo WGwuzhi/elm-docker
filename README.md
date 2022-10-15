@@ -7,14 +7,14 @@
  
 一键安装：
 ```shell
-bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/zelang/elm-docker/main/elmtool.sh')
+bash <(wget --no-check-certificate -qO- 'https://ghproxy.com/https://raw.githubusercontent.com/zelang/elm-docker/main/elmtool.sh')
 ```
 
 手动安装：
 ```shell
 mkdir -p /etc/elmtool && chmod +x /etc/elmtool && cd /etc/elmtool
-wget https://raw.githubusercontent.com/zelang/elm-docker/main/docker-compose.yml -O /etc/elmtool/docker-compose.yml
-wget https://raw.githubusercontent.com/zelang/elm-docker/main/config.ini -O /etc/elmtool/config.ini
+wget https://ghproxy.com/https://raw.githubusercontent.com/zelang/elm-docker/main/docker-compose.yml -O /etc/elmtool/docker-compose.yml
+wget https://ghproxy.com/https://raw.githubusercontent.com/zelang/elm-docker/main/config.ini -O /etc/elmtool/config.ini
 docker-compose pull
 docker-compose up -d --force-recreate
 ```
