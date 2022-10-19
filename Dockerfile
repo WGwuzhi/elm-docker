@@ -1,7 +1,7 @@
 FROM alpine
 
 ENV VERSION 1.8
-ENV VERLITE 1.8.4
+ENV VERLITE 1.8.5
 
 WORKDIR /etc/elmtool
 
