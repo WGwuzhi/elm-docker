@@ -20,8 +20,8 @@ docker run -dit \
   --restart unless-stopped \
   marisn/elmtool:latest
 ```
-----
-- 手动下载`config.ini`然后修改`/etc/elmtool/config.ini`中配置
+
+- 手动下载`config.ini`到`/etc/elmtool/`目录下，然后修改`/etc/elmtool/config.ini`中配置
 - 重启：`docker restart elmtool`
 ----
 手动安装：
