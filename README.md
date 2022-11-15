@@ -10,6 +10,19 @@
 bash <(wget --no-check-certificate -qO- 'https://ghproxy.com/https://raw.githubusercontent.com/zelang/elm-docker/main/elmtool.sh')
 ```
 
+或
+
+```shell
+docker run -dit \
+  -v /etc/elmtool/config.ini:/etc/elmtool/config.ini \
+  --name elmtool \
+  --hostname elmtool \
+  --restart unless-stopped \
+  marisn/elmtool:latest
+```
+手动下载`config.ini`然后修改`/etc/elmtool/config.ini`中配置
+重启：`docker restart elmtool`
+----
 手动安装：
 ```shell
 mkdir -p /etc/elmtool && chmod +x /etc/elmtool && cd /etc/elmtool
