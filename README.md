@@ -39,3 +39,5 @@ docker-compose up -d --force-recreate
 2. 使用一键脚本安装或者手动安装后，需要先执行 `docker stop elmtool` 停止docker运行
 3. 然后修改`/etc/elmtool/config.ini`配置文件
 4. 再执行命令：`cd /etc/elmtool && docker start elmtool`
+
+提示：如果需要重启`docker`请使用命令`docker restart elmtool`，不要使用`docker-compose up -d --force-recreate`。
