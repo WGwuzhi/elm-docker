@@ -5,12 +5,15 @@
  
  工具使用说明：[elm-release](https://github.com/zelang/elm-release)
  
-一键安装：
-```shell
-bash <(wget --no-check-certificate -qO- 'https://ghproxy.com/https://raw.githubusercontent.com/zelang/elm-docker/main/elmtool.sh')
-```
+### Docker使用步骤：
 
-或
+#### 步骤一
+
+- 手动下载本网页中的`config.ini`到`/etc/elmtool/`目录下，然后修改`/etc/elmtool/config.ini`中配置，如果没有此目录，先手动创建
+
+#### 步骤二
+
+- 确认`/etc/elmtool/`目录下的配置文件已修改完毕，再执行以下命令：
 
 ```shell
 docker run -dit \
@@ -21,23 +24,11 @@ docker run -dit \
   marisn/elmtool:latest
 ```
 
-- 手动下载`config.ini`到`/etc/elmtool/`目录下，然后修改`/etc/elmtool/config.ini`中配置
-- 重启：`docker restart elmtool`
-----
-手动安装：
-```shell
-mkdir -p /etc/elmtool && chmod +x /etc/elmtool && cd /etc/elmtool
-wget https://ghproxy.com/https://raw.githubusercontent.com/zelang/elm-docker/main/docker-compose.yml -O /etc/elmtool/docker-compose.yml
-wget https://ghproxy.com/https://raw.githubusercontent.com/zelang/elm-docker/main/config.ini -O /etc/elmtool/config.ini
-docker-compose pull
-docker-compose up -d --force-recreate
-```
-
-使用说明：
-
-1. 手动安装需要预装docker和docker-compose环境
-2. 使用一键脚本安装或者手动安装后，需要先执行 `docker stop elmtool` 停止docker运行
-3. 然后修改`/etc/elmtool/config.ini`配置文件
-4. 再执行命令：`cd /etc/elmtool && docker start elmtool`
-
-提示：如果需要重启`docker`请使用命令`docker restart elmtool`，不要使用`docker-compose up -d --force-recreate`。
+### 一些小提示：
+ 1. 查看日志：`docker logs elmtool`
+ 2. 重启：`docker restart elmtool`
+ 3. 停止并删除：`docker stop elmtool && docker rm elmtool`
+ 4. 更新：
+  - `docker pull marisn/elmtool`
+  - `docker stop elmtool && docker rm elmtool`
+  - 执行步骤二
