@@ -19,7 +19,6 @@
 docker run -dit \
   -v /etc/elmtool/config.ini:/etc/elmtool/config.ini \
   --name elmtool \
-  --hostname elmtool \
   --restart unless-stopped \
   marisn/elmtool:latest
 ```
@@ -29,6 +28,7 @@ docker run -dit \
  2. 重启：`docker restart elmtool`
  3. 停止并删除：`docker stop elmtool && docker rm elmtool`
  4. 更新：
-  - `docker pull marisn/elmtool`
   - `docker stop elmtool && docker rm elmtool`
+  - `docker rmi marisn/elmtool`
+  - `docker pull marisn/elmtool`
   - 执行步骤二
