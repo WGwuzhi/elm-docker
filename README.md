@@ -31,4 +31,5 @@ docker run -dit \
   - `docker stop elmtool && docker rm elmtool`
   - `docker rmi marisn/elmtool`
   - `docker pull marisn/elmtool`
+  - 使用Telegram Bot重置机器码：[https://t.me/remachinecode_bot](https://t.me/remachinecode_bot)
   - 执行步骤二
